@@ -15,5 +15,12 @@
   "bugs": {
     "url": "https://github.com/JochiGolden/reactCourseProgress/issues"
   },
-  "homepage": "https://github.com/JochiGolden/reactCourseProgress#readme"
+  "homepage": "https://github.com/JochiGolden/reactCourseProgress#readme",
+  "devDependencies": {
+    "babel-core": "^6.9.1",
+    "babel-loader": "^6.2.4",
+    "babel-preset-react": "^6.5.0",
+    "html-webpack-plugin": "^2.21.0",
+    "webpack": "^1.13.1"
+  }
 }
