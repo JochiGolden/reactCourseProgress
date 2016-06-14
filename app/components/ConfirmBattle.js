@@ -1,33 +1,35 @@
 var React = require('react');
 var PropTypes = React.PropTypes;
 var styles = require('../styles');
-
-function spittle (obj) {
-  return <pre>{JSON.stringify(obj, null, ' ')}</pre>
-}
-
+var Link = require('react-router').Link;
+var UserDetails = require('./UserDetails');
+var UserDetailsWrapper = require('./UserDetailsWrapper');
 
 function ConfirmBattle (props) {
   return props.isLoading === true
       ? <p> LOADING!! </p>
-      : <div class="jumbotron col-sm-12 text-center" style={styles.transparentBg}>
+      : <div className="jumbotron col-sm-12 text-center" style={styles.transparentBg}>
           <h1>Confirm Players</h1>
-          <div class="col-sm-8 col-sm-offset-2">
-            <div class="col-sm-6">
-              <p class="lead">Player 1</p>
-                {spittle(props.playerInfo[0])}
-            </div>
-            <div class="col-sm-6">
-              <p class="lead">Player 2</p>
-                {spittle(props.playerInfo[1])}
-            </div>
+          <div className="col-sm-8 col-sm-offset-2">
+            <UserDetailsWrapper header="Player One">
+              <UserDetails info={props.playerInfo[0]} />
+            </UserDetailsWrapper>
+            <UserDetailsWrapper header="Player Two">
+              <UserDetails info={props.playerInfo[1]} />
+            </UserDetailsWrapper>
           </div>
-          <div class="col-sm-8 col-sm-offset-2">
-            <div class="col-sm-12" style={styles.space}>
-              Initiate Battle Button
+          <div className="col-sm-8 col-sm-offset-2">
+            <div className="col-sm-12" style={styles.space}>
+              <button type="button" className="btn btn-lg btn-success" onClick={props.onInitiateBattle}>
+                Initiate Battle!
+              </button>
             </div>
-            <div class="col-sm-12" style={styles.space}>
-              Link to /playerOne
+            <div className="col-sm-12" style={styles.space}>
+              <Link to="/playerOne">
+                <button type="button" className="btn btn-lg btn-danger">
+                  Reselect Players
+                </button>
+              </Link>
             </div>
           </div>
         </div>
