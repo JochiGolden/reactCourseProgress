@@ -7,15 +7,15 @@ var UserDetailsWrapper = require('./UserDetailsWrapper');
 
 function ConfirmBattle (props) {
   return props.isLoading === true
-      ? <p> LOADING!! </p>
+      ? <p className="jumbotron col-sm-12 text-center" style={styles.transparentBg}> LOADING!! </p>
       : <div className="jumbotron col-sm-12 text-center" style={styles.transparentBg}>
           <h1>Confirm Players</h1>
           <div className="col-sm-8 col-sm-offset-2">
             <UserDetailsWrapper header="Player One">
-              <UserDetails info={props.playerInfo[0]} />
+              <UserDetails info={props.playersInfo[0]} />
             </UserDetailsWrapper>
             <UserDetailsWrapper header="Player Two">
-              <UserDetails info={props.playerInfo[1]} />
+              <UserDetails info={props.playersInfo[1]} />
             </UserDetailsWrapper>
           </div>
           <div className="col-sm-8 col-sm-offset-2">
@@ -38,7 +38,7 @@ function ConfirmBattle (props) {
 ConfirmBattle.propTypes = {
   isLoading: PropTypes.bool.isRequired,
   onInitiateBattle: PropTypes.func.isRequired,
-  playerInfo: PropTypes.array.isRequired
+  playersInfo: PropTypes.array.isRequired
 }    
 
 module.exports = ConfirmBattle;
