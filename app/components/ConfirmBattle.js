@@ -5,10 +5,11 @@ var Link = require('react-router').Link;
 var UserDetails = require('./UserDetails');
 var UserDetailsWrapper = require('./UserDetailsWrapper');
 var MainContentWrapper = require('./MainContentWrapper');
+var Loading = require('./Loading');
 
 function ConfirmBattle (props) {
   return props.isLoading === true
-      ? <MainContentWrapper> LOADING!! </MainContentWrapper>
+      ? <Loading text={'Just a Minute'} speed={1000}/>
       : <MainContentWrapper>
           <h1>Confirm Players</h1>
           <div className="col-sm-8 col-sm-offset-2">

@@ -5,6 +5,7 @@ var styles = require('../styles');
 var UserDetails = require('./UserDetails');
 var UserDetailsWrapper = require('./UserDetailsWrapper');
 var MainContentWrapper = require('./MainContentWrapper');
+var Loading = require('./Loading');
 
 function StartOverBtn () {
   return (
@@ -20,7 +21,7 @@ function Result (props) {
   
   if (props.isLoading === true) {
     return (
-      <MainContentWrapper>LOADING!!</MainContentWrapper>
+      <Loading text={'Prepare for Battle!'} speed={300} />
     );
   }
   
